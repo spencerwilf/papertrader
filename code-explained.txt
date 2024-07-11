@@ -1,0 +1,33 @@
+  const [orders, setOrders] = useState(() => {
+    const storedOrders = localStorage.getItem("orders");
+    return storedOrders ? JSON.parse(storedOrders) : [];
+  });
+
+  Initial state is an anonymous function that retreives the orders from local storage, if the orders don't exist then its an empty array, if it does it's the currently stored orders
+
+  const handleNewOrder = useCallback((newOrder) => {
+    setOrders((prevOrders) => {
+      const updatedOrders = [...prevOrders, newOrder]
+      localStorage.setItem("orders", JSON.stringify(updatedOrders))
+      return updatedOrders
+    })
+  }, [])
+
+handleNewOrder is a function that is memoized by useCallback. Dependency array is empty so it is only created once and not recreated on subsequent rerenders. We're setting updatedOrders to include the past orders, as well as the newly created order. We then use localStorage.setItem to set the array to the key "orders" in local storage
+
+
+  const selectedAssetDetails = useMemo(() => {
+    return assetsData.find((asset) => asset.symbol === selectedAsset);
+  }, [selectedAsset]);
+
+We wrap this function in useMemo so that details are not unnecessarily recomputed—only if the selected asset changes
+
+
+  const handleClickOutside = useCallback((event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsDropdownOpen(false);
+    }
+  }, []);
+
+
+If the component is mounted (dropdownRef.current is not null) and the dropdownRef.target (click event) isn't on the DOM element with the ref (the price info bar) then we set isDropdownOpen to false, closing it

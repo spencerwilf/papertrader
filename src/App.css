@@ -1,0 +1,65 @@
+/* App.css */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Lato", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-color: #000;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.order-section-container {
+  height: 610px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.chart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 680px;
+  height: 610px;
+  background-color: #111827;
+  border-radius: 10px;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.space-x-4>*+* {
+  margin-left: 1rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-screen-lg {
+  max-width: 80%;
+}
+
+.justify-center {
+  justify-content: center;
+}
