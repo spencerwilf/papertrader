@@ -38,7 +38,7 @@ const ExecuteOrder = ({
 
     try {
       type === "limit"
-        ? (response = await axios.post("http://localhost:3001/trade", {
+        ? (response = await axios.post("https://papertrader.vercel.app/trade", {
             asset,
             side,
             type,
@@ -46,7 +46,7 @@ const ExecuteOrder = ({
             price,
             notional,
           }))
-        : (response = await axios.post("http://localhost:3001/trade", {
+        : (response = await axios.post("https://papertrader.vercel.app/trade", {
             asset,
             side,
             type,
