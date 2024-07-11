@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require("uuid");
 const cors = require("cors");
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = 3001;
 
 const btcOrderbook = require("./data/btc_orderbook.json");
 const ethOrderbook = require("./data/eth_orderbook.json");
