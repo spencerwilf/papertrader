@@ -12,7 +12,7 @@ const OrderBook = ({ selectedAsset }) => {
     const fetchOrderBookData = async () => {
       try {
         const response = await axios.get(
-          `https://papertrader.vercel.app/orderbook/${
+          `http://localhost:3001/orderbook/${
             selectedAsset.symbol.split("-")[0]
           }`
         );
